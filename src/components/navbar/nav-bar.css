@@ -1,0 +1,27 @@
+.custom-nav {
+    background: var(--primary);
+}
+
+.navbar-brand {
+    color: var(--dark) !important;
+}
+
+.navbar-brand:hover {
+    color: var(--secondary) !important;
+}
+
+.navbar-toggler {
+    border: 0;
+}
+
+.navbar-toggler-icon {
+
+}
+
+.nav-link {
+    color: var(--dark) !important;
+}
+
+.nav-link:hover {
+    color: var(--secondary) !important;
+}
