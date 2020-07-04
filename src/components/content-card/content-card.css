@@ -1,0 +1,24 @@
+.card {
+    min-width: 15em;
+    max-width: 18em;
+
+    cursor: pointer;
+}
+
+.card-subtitle, .card-text, .card-footer {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.card-text {
+    padding: 0.5em;
+    border: solid 1px lightgray;
+    border-radius: 0.3em;
+}
+
+.card-footer {
+    background: inherit;
+    padding: 0;
+    border: solid 0;
+    font-weight: bold;
+}

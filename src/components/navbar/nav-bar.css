@@ -6,6 +6,10 @@
     color: var(--dark) !important;
 }
 
+.navbar-brand-logo {
+    height: 2.5rem;
+}
+
 .navbar-brand:hover {
     color: var(--secondary) !important;
 }
