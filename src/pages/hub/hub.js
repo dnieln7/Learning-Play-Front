@@ -14,29 +14,29 @@ export const Hub = () => {
     return (
         <div>
             <div className="title">
-                <h1 className={"text-light text-center"}>Welcome</h1>
-                <h2 className={"text-light text-center"}>Teacher Hub</h2>
+                <h1 className={"text-light text-center"}>Bienvenido</h1>
+                <h2 className={"text-light text-center"}>Panel de maestros</h2>
             </div>
             <div className={"deck-container"}>
                 <ContentCard content={
                     {
                         img: test_new,
-                        title: "New Test",
-                        subtitle: "Create a new test",
+                        title: "Nueva evaluación",
+                        subtitle: "Crea una nueva evaluación",
                         path: () => history.push("/forms/creator")
                     }}/>
                 <ContentCard content={
                     {
                         img: test_update,
-                        title: "Created tests",
-                        subtitle: "Update your test",
+                        title: "Evaluaciones",
+                        subtitle: "Vizualiza las evaluaciones creadas",
                         path: () => history.push("/forms/view")
                     }}/>
                 <ContentCard content={
                     {
                         img: test_completed,
-                        title: "Answered tests",
-                        subtitle: "Grade your students tests",
+                        title: "Evaluaciones contestadas",
+                        subtitle: "Califica a tus estudiantes",
                         path: () => history.push("/forms/view")
                     }}/>
             </div>

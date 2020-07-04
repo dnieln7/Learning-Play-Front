@@ -22,3 +22,7 @@
     border: solid 0;
     font-weight: bold;
 }
+
+.custom-card {
+    background: var(--light);
+}

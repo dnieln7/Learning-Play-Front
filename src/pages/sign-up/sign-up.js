@@ -5,8 +5,6 @@ import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import InputGroup from "react-bootstrap/InputGroup";
 import Button from "react-bootstrap/Button";
-import {Link} from "react-router-dom";
-import Card, {CardLink} from "react-bootstrap/Card";
 import Alert from "react-bootstrap/Alert";
 import {signUp} from "../../services/UserDataService";
 
@@ -36,7 +34,7 @@ export const SignUp = () => {
                 lastName: lastName,
                 email: email,
                 password: password,
-                role: role === "MAESTRO" ? "TEACHER" : "STUDENT"
+                role: role === "Maestro" ? "TEACHER" : "STUDENT"
             };
 
             signUp(user).then(response => {
@@ -54,12 +52,12 @@ export const SignUp = () => {
                     ?
                     <Alert variant="danger" onClose={() => setShow(false)} dismissible>
                         <Alert.Heading>Error!</Alert.Heading>
-                        <p>You must accept terms and conditions</p>
+                        <p>Debes aceptar los terminos y condiciones</p>
                     </Alert>
                     : <div/>
             }
             <Form noValidate validated={validated} onSubmit={handleSignUp} className={"form-container"}>
-                <Form.Label className={"form-title mb-4"}>Sign Up</Form.Label>
+                <Form.Label className={"form-title mb-4"}>Crear mi cuenta</Form.Label>
                 <Form.Row>
                     <Form.Group as={Col} controlId="validationCustom01">
                         <Form.Control
@@ -69,7 +67,7 @@ export const SignUp = () => {
                             onChange={({target}) => setName(target.value)}
                         />
                         <Form.Control.Feedback type="invalid">
-                            Please provide your name.
+                            Por favor ingresa tu nombre.
                         </Form.Control.Feedback>
                     </Form.Group>
                     <Form.Group as={Col} controlId="validationCustom02">
@@ -80,7 +78,7 @@ export const SignUp = () => {
                             onChange={({target}) => setLastName(target.value)}
                         />
                         <Form.Control.Feedback type="invalid">
-                            Please provide your last name.
+                            Por favor ingresa tus apellidos.
                         </Form.Control.Feedback>
                     </Form.Group>
                 </Form.Row>
@@ -98,7 +96,7 @@ export const SignUp = () => {
                                 onChange={({target}) => setEmail(target.value)}
                             />
                             <Form.Control.Feedback type="invalid">
-                                Please provide an email.
+                                Porfavor ingresa un correo electrónico válido.
                             </Form.Control.Feedback>
                         </InputGroup>
                     </Form.Group>
@@ -110,16 +108,16 @@ export const SignUp = () => {
                             onChange={({target}) => setPassword(target.value)}
                         />
                         <Form.Control.Feedback type="invalid">
-                            Please provide a valid password.
+                            Por favor ingresa una contraseña.
                         </Form.Control.Feedback>
                     </Form.Group>
                 </Form.Row>
                 <Form.Row>
                     <Form.Group as={Col}>
-                        <Form.Label>Please choose your role</Form.Label>
+                        <Form.Label>Soy un</Form.Label>
                         <Form.Control as="select" custom onChange={({target}) => setRole(target.value)}>
-                            <option>ESTUDIANTE</option>
-                            <option>MAESTRO</option>
+                            <option>Estudiante</option>
+                            <option>Maestro</option>
                         </Form.Control>
                     </Form.Group>
                 </Form.Row>
@@ -129,10 +127,10 @@ export const SignUp = () => {
                             required
                             type="checkbox"
                             onChange={({target}) => setTerms(target.checked)}
-                        /> Accept Terms and Conditions
+                        /> Acepto los terminos y condiciones
                     </a>
                 </Form.Group>
-                <Button type="submit" className={"sign-up-button"}>Sign Up</Button>
+                <Button type="submit" className={"sign-up-button"}>Crear cuenta</Button>
             </Form>
         </div>
     );

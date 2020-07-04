@@ -8,19 +8,15 @@ export default class ContentCard extends React.Component {
             img,
             title,
             subtitle,
-            body,
-            foot,
             path
         } = this.props.content;
 
         return (
-            <Card bg={"light"} className={"m-2 pt-2"} onClick={path}>
+            <Card className={"m-2 pt-2 custom-card text-dark"} onClick={path}>
                 <Card.Img variant="top" src={img}/>
                 <Card.Body>
                     <Card.Title className={"text-center"}>{title}</Card.Title>
                     <Card.Subtitle className={"text-center"}>{subtitle}</Card.Subtitle>
-                    {/*                    <Card.Text>{body}</Card.Text>
-                    <Card.Footer>${foot}</Card.Footer>*/}
                 </Card.Body>
             </Card>
         );

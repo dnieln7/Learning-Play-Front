@@ -17,7 +17,7 @@ export const Login = () => {
         let auth = {
                 email: email,
                 password: password,
-                role: role === "MAESTRO" ? "TEACHER" : "STUDENT"
+                role: role === "Maestro" ? "TEACHER" : "STUDENT"
         };
 
         login(auth).then(response => console.log(response.data.result))
@@ -28,32 +28,32 @@ export const Login = () => {
             <Image className="img-custom" src={"https://img.icons8.com/material-rounded/100/000000/user-location.png"}/>
             <div className={"form-container"}>
                 <Form>
-                    <Form.Label className={"form-title mb-4"}>Login</Form.Label>
+                    <Form.Label className={"form-title mb-4"}>Inicar sesión</Form.Label>
 
                     <Form.Group>
                         <Form.Control onChange={({target}) => setEmail(target.value)} type="email"
-                                      placeholder="Enter email"/>
+                                      placeholder="Correo electrónico"/>
                         <Form.Text className="text-muted">
-                            We'll never share your email with anyone else.
+                            Nunca compartiremos tu correo con terceros.
                         </Form.Text>
                     </Form.Group>
 
                     <Form.Group>
                         <Form.Control onChange={({target}) => setPassword(target.value)} type="password"
-                                      placeholder="Password"/>
+                                      placeholder="Contraseña"/>
                     </Form.Group>
 
                     <Form.Group>
-                        <Form.Label>Please choose your role</Form.Label>
+                        <Form.Label>Soy un</Form.Label>
                         <Form.Control as="select" custom onChange={({target}) => setRole(target.value)}>
-                            <option>ESTUDIANTE</option>
-                            <option>MAESTRO</option>
+                            <option>Estudiante</option>
+                            <option>Maestro</option>
                         </Form.Control>
                     </Form.Group>
 
-                    <Button className={"login-button"} type="button" onClick={handleLogin} block>Login</Button>
-                    <Button className={"sign-up-button"} type="button" href={"/sign-up"} block>Sign Up</Button>
-                    <Button className={"forgot-button"} type="button" block>Forgot Password</Button>
+                    <Button className={"login-button"} type="button" onClick={handleLogin} block>Iniciar sesión</Button>
+                    <Button className={"sign-up-button"} type="button" href={"/sign-up"} block>Registrarme</Button>
+                    <Button className={"forgot-button"} type="button" block>Olvidé mi contraseña</Button>
                 </Form>
             </div>
         </div>
