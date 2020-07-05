@@ -5,9 +5,11 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
 import {login} from "../../services/UserDataService";
+import {useHistory} from "react-router-dom";
 
 
 export const Login = () => {
+    const history = useHistory();
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -15,12 +17,21 @@ export const Login = () => {
 
     function handleLogin() {
         let auth = {
-                email: email,
-                password: password,
-                role: role === "Maestro" ? "TEACHER" : "STUDENT"
+            email: email,
+            password: password,
+            role: role === "Maestro" ? "TEACHER" : "STUDENT"
         };
 
-        login(auth).then(response => console.log(response.data.result))
+        login(auth).then(response => {
+            localStorage.setItem("user", JSON.stringify(response.data.result));
+            if (localStorage.getItem("user").length > 1) {
+                window.location.reload();
+            }
+        }).catch(error => alert(error));
+    }
+
+    if (localStorage.getItem("user") !== null) {
+        history.push("/hub");
     }
 
     return (

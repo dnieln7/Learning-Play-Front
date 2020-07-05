@@ -8,6 +8,8 @@ import Image from "react-bootstrap/Image";
 
 export default class NavBar extends React.Component {
     render() {
+        const user = JSON.parse(localStorage.getItem("user"));
+
         return (
             <Navbar collapseOnSelect expand={"md"} variant={"light"} className={"custom-nav"}>
                 <Navbar.Brand href={"/"}>
@@ -17,10 +19,21 @@ export default class NavBar extends React.Component {
                 <Navbar.Collapse id="menu">
                     <Nav className="mr-auto">
                         <Nav.Link href="/home">Inicio</Nav.Link>
-                        <Nav.Link href="/hub">Panel</Nav.Link>
+                        {
+                            user === null
+                                ? <div/>
+                                : <Nav.Link href="/hub">Panel</Nav.Link>
+                        }
                     </Nav>
                     <Nav>
-                        <Nav.Link href="/login">Iniciar sesión</Nav.Link>
+                        {
+                            user === null
+                                ? <Nav.Link href="/login">Iniciar sesión</Nav.Link>
+                                : <Nav.Link onClick={() => {
+                                    localStorage.removeItem("user");
+                                    window.location.reload();
+                                }}>Cerrar sesión</Nav.Link>
+                        }
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
