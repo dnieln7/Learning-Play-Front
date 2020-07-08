@@ -1,0 +1,75 @@
+/* Form */
+
+.form-container {
+    width: 75%;
+    background: var(--dark);
+    color: var(--light);
+    border: 1px solid transparent;
+    border-radius: 1rem;
+}
+
+.form-title {
+    background: var(--dark);
+    color: var(--light);
+    border: 0;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.form-subtitle {
+    font-weight: normal;
+    font-size: 1.3em;
+}
+
+.save-button {
+    background: var(--secondary);
+    color: var(--light);
+    border: 0;
+}
+
+.save-button:hover {
+    background: var(--secondary);
+    color: var(--light);
+    border: 0;
+}
+
+.save-button:not(:disabled):not(.disabled):active {
+    background: var(--secondary);
+    color: var(--light);
+    border: 0;
+}
+
+/* Question Panel*/
+
+.panel-container {
+    position: absolute;
+    top: 5rem;
+    right: 1rem;
+
+    background: var(--primary);
+    border: 1px solid transparent;
+    border-radius: 1rem;
+}
+
+.question-card {
+    background: var(--dark);
+    color: var(--light);
+}
+
+.panel-title {
+    color: var(--dark);
+    font-weight: normal;
+    font-size: 1.5em;
+}
+
+.card-button {
+    background: transparent;
+    color: var(--primary);
+    border: 0;
+}
+
+.card-button:hover {
+    background: transparent;
+    color: var(--primary);
+    border: 0;
+}
