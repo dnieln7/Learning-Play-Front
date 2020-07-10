@@ -1,4 +1,4 @@
-.root-container {
+.sign-up-container {
     position: fixed;
     height: 100%;
     width: 100%;
@@ -10,7 +10,7 @@
     background: var(--dark);
 }
 
-.form-container {
+.sign-up-form-container {
     text-align: center;
     background: var(--primary);
     color: var(--dark);
@@ -23,7 +23,7 @@
     margin-bottom: -2rem;
 }
 
-.form-title {
+.sign-up-form-title {
     font-size: 1.3em;
 }
 

@@ -46,7 +46,7 @@ export const SignUp = () => {
     };
 
     return (
-        <div className={"root-container"}>
+        <div className={"sign-up-container"}>
             {
                 show
                     ?
@@ -56,8 +56,8 @@ export const SignUp = () => {
                     </Alert>
                     : <div/>
             }
-            <Form noValidate validated={validated} onSubmit={handleSignUp} className={"form-container"}>
-                <Form.Label className={"form-title mb-4"}>Crear mi cuenta</Form.Label>
+            <Form noValidate validated={validated} onSubmit={handleSignUp} className={"sign-up-form-container"}>
+                <Form.Label className={"sign-up-form-title mb-4"}>Crear mi cuenta</Form.Label>
                 <Form.Row>
                     <Form.Group as={Col} controlId="validationCustom01">
                         <Form.Control

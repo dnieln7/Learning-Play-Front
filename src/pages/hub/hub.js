@@ -21,36 +21,71 @@ export const Hub = () => {
             </div>
         );
     } else {
-        return (
-            <div>
-                <div className="title">
-                    <h1 className={"text-light text-center"}>Bienvenido {user.name}</h1>
-                    <h2 className={"text-light text-center"}>Panel de maestros</h2>
+        if(user.role === "STUDENT") {
+            return (
+                <div>
+                    <div className="title">
+                        <h1 className={"text-light text-center"}>Bienvenido {user.name}</h1>
+                        <h2 className={"text-light text-center"}>Panel de estudiantes</h2>
+                    </div>
+                    <div className={"deck-container"}>
+                        <ContentCard content={
+                            {
+                                img: test_new,
+                                title: "Nueva evaluación",
+                                subtitle: "Crea una nueva evaluación",
+                                path: () => history.push("/forms/creator")
+                            }}/>
+                        <ContentCard content={
+                            {
+                                img: test_update,
+                                title: "Evaluaciones",
+                                subtitle: "Vizualiza las evaluaciones creadas",
+                                path: () => history.push("/forms/list")
+                            }}/>
+                        <ContentCard content={
+                            {
+                                img: test_completed,
+                                title: "Evaluaciones contestadas",
+                                subtitle: "Califica a tus estudiantes",
+                                path: () => history.push("/forms/list")
+                            }}/>
+                    </div>
                 </div>
-                <div className={"deck-container"}>
-                    <ContentCard content={
-                        {
-                            img: test_new,
-                            title: "Nueva evaluación",
-                            subtitle: "Crea una nueva evaluación",
-                            path: () => history.push("/forms/creator")
-                        }}/>
-                    <ContentCard content={
-                        {
-                            img: test_update,
-                            title: "Evaluaciones",
-                            subtitle: "Vizualiza las evaluaciones creadas",
-                            path: () => history.push("/forms/list")
-                        }}/>
-                    <ContentCard content={
-                        {
-                            img: test_completed,
-                            title: "Evaluaciones contestadas",
-                            subtitle: "Califica a tus estudiantes",
-                            path: () => history.push("/forms/list")
-                        }}/>
+            );
+        }
+        else {
+            return (
+                <div>
+                    <div className="title">
+                        <h1 className={"text-light text-center"}>Bienvenido {user.name}</h1>
+                        <h2 className={"text-light text-center"}>Panel de maestros</h2>
+                    </div>
+                    <div className={"deck-container"}>
+                        <ContentCard content={
+                            {
+                                img: test_new,
+                                title: "Nueva evaluación",
+                                subtitle: "Crea una nueva evaluación",
+                                path: () => history.push("/forms/creator")
+                            }}/>
+                        <ContentCard content={
+                            {
+                                img: test_update,
+                                title: "Evaluaciones",
+                                subtitle: "Vizualiza las evaluaciones creadas",
+                                path: () => history.push("/forms/list")
+                            }}/>
+                        <ContentCard content={
+                            {
+                                img: test_completed,
+                                title: "Evaluaciones contestadas",
+                                subtitle: "Califica a tus estudiantes",
+                                path: () => history.push("/forms/list")
+                            }}/>
+                    </div>
                 </div>
-            </div>
-        );
+            );
+        }
     }
 };

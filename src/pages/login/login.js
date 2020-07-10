@@ -35,11 +35,11 @@ export const Login = () => {
     }
 
     return (
-        <div className={"root-container"}>
+        <div className={"login-container"}>
             <Image className="img-custom" src={"https://img.icons8.com/material-rounded/100/000000/user-location.png"}/>
-            <div className={"form-container"}>
+            <div className={"login-form-container"}>
                 <Form>
-                    <Form.Label className={"form-title mb-4"}>Inicar sesión</Form.Label>
+                    <Form.Label className={"login-title mb-4"}>Inicar sesión</Form.Label>
 
                     <Form.Group>
                         <Form.Control onChange={({target}) => setEmail(target.value)} type="email"

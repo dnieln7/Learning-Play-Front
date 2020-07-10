@@ -1,4 +1,4 @@
-.root-container {
+.login-container {
     position: fixed;
     height: 100%;
     width: 100%;
@@ -10,7 +10,7 @@
     background: var(--dark);
 }
 
-.form-container {
+.login-form-container {
     text-align: center;
     background: var(--primary);
     color: var(--dark);
@@ -23,7 +23,7 @@
     margin-bottom: -2rem;
 }
 
-.form-title {
+.login-title {
     font-size: 1.3em;
 }
 
