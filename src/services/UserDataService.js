@@ -12,7 +12,7 @@ export function get() {
     return axios.get(URL, {headers: HEADERS});
 }
 
-export function getFormById(id) {
+export function getUserById(id) {
     return axios.get(URL + "/" + id, {headers: HEADERS});
 }
 

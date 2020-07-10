@@ -1,0 +1,13 @@
+.test-container {
+    color: var(--light);
+}
+
+.form-title {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.form-subtitle {
+    font-weight: normal;
+    font-size: 1.3em;
+}

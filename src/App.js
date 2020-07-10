@@ -7,6 +7,8 @@ import {Login} from "./pages/login/login";
 import {SignUp} from "./pages/sign-up/sign-up";
 import {Hub} from "./pages/hub/hub";
 import {FormCreator} from "./pages/form-creator/form-creator";
+import {TestList} from "./pages/test-list/test-list";
+import {TestView} from "./pages/test-view/test-view";
 
 const Switch = require("react-router-dom").Switch;
 const Redirect = require("react-router-dom").Redirect;
@@ -23,6 +25,8 @@ function App() {
                 <Route path="/home" exact component={Home}/>
                 <Route path="/hub" exact component={Hub}/>
                 <Route path="/forms/creator" exact component={FormCreator}/>
+                <Route path="/forms/list" exact component={TestList}/>
+                <Route path="/form/" component={TestView}/>
             </Switch>
         </div>
     );

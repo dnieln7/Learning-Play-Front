@@ -26,7 +26,7 @@ export const FormCreator = () => {
         teacher: {
             id: user.id
         },
-        questions: questions,
+        questions: JSON.stringify(questions),
     };
 
     function pushQuestion(question) {
@@ -34,7 +34,6 @@ export const FormCreator = () => {
     }
 
     function saveForm() {
-        console.log(formTeacher);
         postForm(formTeacher)
             .then(response => console.log(response.data))
             .catch(error => console.log(error));
@@ -54,8 +53,6 @@ export const FormCreator = () => {
                                 <FormControl placeholder={lesson} className="form-title text-center"
                                              onChange={({target}) => setLesson(target.value)}/>
                             </Col>
-
-
                         </Row>
                     </Form.Group>
                     <div className={"text-left"}>

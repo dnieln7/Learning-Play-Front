@@ -1,0 +1,9 @@
+.make-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.img-button {
+    cursor: pointer;
+    height: 2.5rem;
+}

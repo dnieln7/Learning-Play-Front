@@ -40,14 +40,14 @@ export const Hub = () => {
                             img: test_update,
                             title: "Evaluaciones",
                             subtitle: "Vizualiza las evaluaciones creadas",
-                            path: () => history.push("/forms/view")
+                            path: () => history.push("/forms/list")
                         }}/>
                     <ContentCard content={
                         {
                             img: test_completed,
                             title: "Evaluaciones contestadas",
                             subtitle: "Califica a tus estudiantes",
-                            path: () => history.push("/forms/view")
+                            path: () => history.push("/forms/list")
                         }}/>
                 </div>
             </div>
