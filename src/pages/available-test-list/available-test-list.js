@@ -1,12 +1,12 @@
-import "./test-list.css";
+import "./available-test-list.css";
 
 import React, {useEffect, useState} from 'react';
 import ListGroup from "react-bootstrap/ListGroup";
 import {deleteForm, getForms} from "../../services/FromsTeacherDataService";
-import {TestListItem} from "../../components/test-list-item/test-list-item";
 import {useHistory} from "react-router-dom";
+import {AvailableTestListItem} from "../../components/available-test-list-item/available-test-list-item";
 
-export const TestList = () => {
+export const AvailableTestList = () => {
     const [forms, setForms] = useState([]);
 
     const history = useHistory();
@@ -18,22 +18,15 @@ export const TestList = () => {
     return (
         <div className="p-4">
             <div className="mb-4">
-                <h1 className="text-light text-center">Evaluaciones Creadas</h1>
+                <h1 className="text-light text-center">Evaluaciones Disponibles</h1>
             </div>
             <ListGroup>
                 {
-                    forms.map((form, index) => <TestListItem key={index} content={{
+                    forms.map((form, index) => <AvailableTestListItem key={index} content={{
                         title: form.title,
                         lesson: form.lesson,
                         teacher: form.teacher.name,
-                        deleteItem: () => deleteForm(form.id).then(response => {
-                            console.log(response.data);
-                            if (response.data.success === 1) {
-                                forms.splice(index, 1);
-                                window.location.reload();
-                            }
-                        }),
-                        viewItem: () => history.push("/form/" + form.id)
+                        take: () => history.push("/available-forms/take/" + form.id)
                     }}/>)
                 }
             </ListGroup>

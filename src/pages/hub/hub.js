@@ -31,24 +31,17 @@ export const Hub = () => {
                     <div className={"deck-container"}>
                         <ContentCard content={
                             {
-                                img: test_new,
-                                title: "Nueva evaluación",
-                                subtitle: "Crea una nueva evaluación",
-                                path: () => history.push("/forms/creator")
-                            }}/>
-                        <ContentCard content={
-                            {
-                                img: test_update,
+                                img: test_completed,
                                 title: "Evaluaciones",
-                                subtitle: "Vizualiza las evaluaciones creadas",
-                                path: () => history.push("/forms/list")
+                                subtitle: "Vizualiza las evaluaciones publicadas",
+                                path: () => history.push("/available-forms/list")
                             }}/>
                         <ContentCard content={
                             {
                                 img: test_completed,
-                                title: "Evaluaciones contestadas",
-                                subtitle: "Califica a tus estudiantes",
-                                path: () => history.push("/forms/list")
+                                title: "Mis evaluaciones",
+                                subtitle: "Revisa tus resultados",
+                                path: () => history.push("/graded-forms/list")
                             }}/>
                     </div>
                 </div>
@@ -81,7 +74,7 @@ export const Hub = () => {
                                 img: test_completed,
                                 title: "Evaluaciones contestadas",
                                 subtitle: "Califica a tus estudiantes",
-                                path: () => history.push("/forms/list")
+                                path: () => history.push("/completed-forms/list")
                             }}/>
                     </div>
                 </div>
