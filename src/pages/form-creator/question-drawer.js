@@ -22,6 +22,16 @@ export function drawOpenQuestionEditable(index, question, setter) {
     );
 }
 
+export function drawOpenQuestionGradable(index, question) {
+    return (
+        <Form.Group key={index}>
+            <Form.Label>{(index + 1) + ".- " + question.title}</Form.Label>
+            <Form.Control style={{background: "var(--light-gray)", color: "var(--dark)", borderRadius: "1rem"}} type="text"
+                          value={question.answer} disabled/>
+        </Form.Group>
+    );
+}
+
 export function drawOptionsQuestion(question, index) {
     return (
         <Form.Group key={index}>
@@ -63,6 +73,30 @@ export function drawOptionsQuestionEditable(index, question) {
                                     question.options.forEach(op => op.correct = !target);
                                     option.correct = target.checked;
                                 }}
+                            />
+                        );
+                    })
+                }
+            </Col>
+        </Form.Group>
+    );
+}
+
+export function drawOptionsQuestionGradable(index, question) {
+    return (
+        <Form.Group key={index}>
+            <Form.Label>{(index + 1) + ".- " + question.title}</Form.Label>
+            <Col sm>
+                {
+                    question.options.map((option, index) => {
+                        return (
+                            <Form.Check
+                                key={index}
+                                type={"radio"}
+                                name={question.title + "_radios"}
+                                label={option.title}
+                                defaultChecked={option.correct}
+                                disabled={!option.correct}
                             />
                         );
                     })

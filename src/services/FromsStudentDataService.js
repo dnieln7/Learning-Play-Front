@@ -20,6 +20,10 @@ export function postForm(form) {
     return axios.post(URL, form, {headers: HEADERS});
 }
 
+export function putForm(id, form) {
+    return axios.put(URL + "/" + id, form, {headers: HEADERS});
+}
+
 export function deleteForm(id) {
     return axios.delete(URL + "/" + id, {headers: HEADERS});
 }
