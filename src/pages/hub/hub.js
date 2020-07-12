@@ -43,6 +43,13 @@ export const Hub = () => {
                                 subtitle: "Revisa tus resultados",
                                 path: () => history.push("/graded-forms/list")
                             }}/>
+                        <ContentCard content={
+                            {
+                                img: "https://img.icons8.com/fluent/200/000000/book.png",
+                                title: "Publicaciones",
+                                subtitle: "Consulta los contenidos públicados",
+                                path: () => history.push("/posts/list")
+                            }}/>
                     </div>
                 </div>
             );
