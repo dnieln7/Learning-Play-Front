@@ -14,6 +14,9 @@ import {TestTakeView} from "./pages/test-take/test-take-view";
 import {CompletedTestList} from "./pages/completed-test-list/completed-test-list";
 import {TestGradeView} from "./pages/test-grade/test-grade-view";
 import {GradedTestList} from "./pages/graded-test-list/graded-test-list";
+import {PostList} from "./pages/post-list/post-list";
+import {PostCreator} from "./pages/post-creator/post-creator";
+import {PostView} from "./pages/post-view/post-view";
 
 const Switch = require("react-router-dom").Switch;
 const Redirect = require("react-router-dom").Redirect;
@@ -37,6 +40,9 @@ function App() {
                 <Route path="/available-forms/list" exact component={AvailableTestList}/>
                 <Route path="/available-forms/take/:id" exact component={TestTakeView}/>
                 <Route path="/graded-forms/list" exact component={GradedTestList}/>
+                <Route path={"/posts/create"} exact component={PostCreator}/>
+                <Route path={"/posts/list"} exact component={PostList}/>
+                <Route path={"/posts/view/:id"} exact component={PostView}/>
             </Switch>
         </div>
     );

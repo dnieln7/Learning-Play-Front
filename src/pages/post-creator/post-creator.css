@@ -1,0 +1,4 @@
+.post-creator-container {
+    display: flex;
+    flex-direction: column;
+}

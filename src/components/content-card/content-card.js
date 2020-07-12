@@ -13,7 +13,7 @@ export default class ContentCard extends React.Component {
 
         return (
             <Card className={"m-2 pt-2 custom-card text-dark"} onClick={path}>
-                <Card.Img variant="top" src={img}/>
+                <Card.Img src={img}/>
                 <Card.Body>
                     <Card.Title className={"text-center"}>{title}</Card.Title>
                     <Card.Subtitle className={"text-center"}>{subtitle}</Card.Subtitle>

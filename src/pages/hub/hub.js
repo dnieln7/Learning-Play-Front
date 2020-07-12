@@ -21,7 +21,7 @@ export const Hub = () => {
             </div>
         );
     } else {
-        if(user.role === "STUDENT") {
+        if (user.role === "STUDENT") {
             return (
                 <div>
                     <div className="title">
@@ -46,8 +46,7 @@ export const Hub = () => {
                     </div>
                 </div>
             );
-        }
-        else {
+        } else {
             return (
                 <div>
                     <div className="title">
@@ -75,6 +74,20 @@ export const Hub = () => {
                                 title: "Evaluaciones contestadas",
                                 subtitle: "Califica a tus estudiantes",
                                 path: () => history.push("/completed-forms/list")
+                            }}/>
+                        <ContentCard content={
+                            {
+                                img: "https://img.icons8.com/fluent/200/000000/book.png",
+                                title: "Nuevo contenido",
+                                subtitle: "Publica un nuevo contenido",
+                                path: () => history.push("/posts/create")
+                            }}/>
+                        <ContentCard content={
+                            {
+                                img: "https://img.icons8.com/fluent/200/000000/book.png",
+                                title: "Publicaciones",
+                                subtitle: "Consulta los contenidos públicados",
+                                path: () => history.push("/posts/list")
                             }}/>
                     </div>
                 </div>
