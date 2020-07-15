@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import ListGroup from "react-bootstrap/ListGroup";
 import {getForms} from "../../services/FromsTeacherDataService";
 import {useHistory} from "react-router-dom";
-import {AvailableTestListItem} from "../../components/available-test-list-item/available-test-list-item";
+import {AvailableTestItem} from "../../components/available-test-item";
 
 export const AvailableTestList = () => {
     const [forms, setForms] = useState([]);
@@ -20,7 +20,7 @@ export const AvailableTestList = () => {
             </div>
             <ListGroup>
                 {
-                    forms.map((form, index) => <AvailableTestListItem key={index} content={{
+                    forms.map((form, index) => <AvailableTestItem key={index} content={{
                         title: form.title,
                         lesson: form.lesson,
                         teacher: form.teacher.name,

@@ -3,7 +3,7 @@ import "../pages-styles.css";
 import React, {useEffect, useState} from 'react';
 import ListGroup from "react-bootstrap/ListGroup";
 import {deleteForm, getForms} from "../../services/FromsTeacherDataService";
-import {TestListItem} from "../../components/test-list-item/test-list-item";
+import {PublishedTestItem} from "../../components/published-test-item";
 import {useHistory} from "react-router-dom";
 
 export const PublishedTestList = () => {
@@ -22,7 +22,7 @@ export const PublishedTestList = () => {
             </div>
             <ListGroup>
                 {
-                    forms.map((form, index) => <TestListItem key={index} content={{
+                    forms.map((form, index) => <PublishedTestItem key={index} content={{
                         title: form.title,
                         lesson: form.lesson,
                         teacher: form.teacher.name,

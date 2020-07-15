@@ -1,24 +1,8 @@
-.card-subtitle, .card-text, .card-footer {
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-}
-
-.card-text {
-    padding: 0.5em;
-    border: solid 1px lightgray;
-    border-radius: 0.3em;
-}
-
-.card-footer {
-    background: inherit;
-    padding: 0;
-    border: solid 0;
-    font-weight: bold;
-}
-
 .card-container {
     min-width: 12em;
     max-width: 16em;
+
+    margin: 0.5em;
 }
 
 @media (max-width: 800px) {

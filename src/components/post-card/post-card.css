@@ -1,18 +1,1 @@
-.post-card {
-    margin: 0.5em;
-    min-width: 15em;
-    max-width: 18em;
 
-    cursor: pointer;
-}
-
-@media (max-width: 800px) {
-    .post-card {
-        min-width: 10em;
-        max-width: 15em;
-    }
-
-    .font {
-        font-size: 1em;
-    }
-}
