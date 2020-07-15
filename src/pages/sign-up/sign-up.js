@@ -1,4 +1,5 @@
 import "./sign-up.css";
+import "../pages-styles.css"
 
 import React, {useState} from "react";
 import Form from "react-bootstrap/Form";
@@ -46,7 +47,7 @@ export const SignUp = () => {
     };
 
     return (
-        <div className={"sign-up-container"}>
+        <div className="column-justify-align-center pt-5">
             {
                 show
                     ?
@@ -56,10 +57,10 @@ export const SignUp = () => {
                     </Alert>
                     : <div/>
             }
-            <Form noValidate validated={validated} onSubmit={handleSignUp} className={"sign-up-form-container"}>
-                <Form.Label className={"sign-up-form-title mb-4"}>Crear mi cuenta</Form.Label>
+            <Form noValidate validated={validated} onSubmit={handleSignUp} className="container-primary rounded text-center p-4 m-4">
+                <Form.Label className="font-title mb-4">Crear mi cuenta</Form.Label>
                 <Form.Row>
-                    <Form.Group as={Col} controlId="validationCustom01">
+                    <Form.Group as={Col}>
                         <Form.Control
                             required
                             type="text"
@@ -70,7 +71,7 @@ export const SignUp = () => {
                             Por favor ingresa tu nombre.
                         </Form.Control.Feedback>
                     </Form.Group>
-                    <Form.Group as={Col} controlId="validationCustom02">
+                    <Form.Group as={Col}>
                         <Form.Control
                             required
                             type="text"
@@ -83,10 +84,10 @@ export const SignUp = () => {
                     </Form.Group>
                 </Form.Row>
                 <Form.Row>
-                    <Form.Group as={Col} controlId="validationCustomUsername">
+                    <Form.Group as={Col}>
                         <InputGroup>
                             <InputGroup.Prepend>
-                                <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
+                                <InputGroup.Text>@</InputGroup.Text>
                             </InputGroup.Prepend>
                             <Form.Control
                                 type="email"
@@ -100,7 +101,7 @@ export const SignUp = () => {
                             </Form.Control.Feedback>
                         </InputGroup>
                     </Form.Group>
-                    <Form.Group as={Col} controlId="validationCustom03">
+                    <Form.Group as={Col} >
                         <Form.Control
                             required
                             type="password"
@@ -114,7 +115,7 @@ export const SignUp = () => {
                 </Form.Row>
                 <Form.Row>
                     <Form.Group as={Col}>
-                        <Form.Label>Soy un</Form.Label>
+                        <Form.Label className="font-subtitle">Soy un</Form.Label>
                         <Form.Control as="select" custom onChange={({target}) => setRole(target.value)}>
                             <option>Estudiante</option>
                             <option>Maestro</option>
@@ -122,7 +123,7 @@ export const SignUp = () => {
                     </Form.Group>
                 </Form.Row>
                 <Form.Group as={Col}>
-                    <a className={"form-link"} href={"https://www.google.com"}>
+                    <a className="secondary-button-text text-decoration-none" href={"https://www.google.com"}>
                         <input
                             required
                             type="checkbox"
@@ -130,7 +131,7 @@ export const SignUp = () => {
                         /> Acepto los terminos y condiciones
                     </a>
                 </Form.Group>
-                <Button type="submit" className={"sign-up-button"}>Crear cuenta</Button>
+                <Button type="submit" className="secondary-button-filled">Crear cuenta</Button>
             </Form>
         </div>
     );

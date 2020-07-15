@@ -1,4 +1,5 @@
 import "./test-grade-view.css";
+import "../pages-styles.css";
 
 import React, {useEffect, useState} from "react";
 import Form from "react-bootstrap/Form";
@@ -48,17 +49,17 @@ export const TestGradeView = () => {
     }
 
     return (
-        <div className={"grade-test-container p-4"}>
+        <div className="p-4 text-left text-light">
             <Form>
                 <Form.Group>
                     <Row>
-                        <Col>
-                            <p className="grade-test-title text-center">{form.title}</p>
-                            <p className="grade-test-subtitle text-center">{form.lesson}</p>
+                        <Col className="text-light text-center">
+                            <p className="font-title">{form.title}</p>
+                            <p className="font-subtitle">{form.lesson}</p>
                         </Col>
                     </Row>
                 </Form.Group>
-                <div className={"text-left"}>
+                <div>
                     {
                         form.content.map((question, index) => {
                             switch (question.type) {
@@ -75,22 +76,16 @@ export const TestGradeView = () => {
                 <Form.Group>
                     <Row>
                         <Col>
-                            <Form.Group>
-                                <Form.Label>Calificación</Form.Label>
-                                <Form.Control style={{background: "var(--light)", color: "var(--dark)"}} type="number"
-                                              onChange={({target}) => setGrade(parseFloat(target.value))}/>
-                            </Form.Group>
+                            <Form.Control type="number" placeholder={"Calificación"}
+                                          onChange={({target}) => setGrade(parseFloat(target.value))}/>
                         </Col>
                         <Col>
-                            <Form.Group>
-                                <Form.Label>Comentarios</Form.Label>
-                                <Form.Control as="textarea" rows="3"
-                                              onChange={({target}) => setComments(target.value)}/>
-                            </Form.Group>
+                            <Form.Control as="textarea" rows="3" placeholder={"Comentarios"}
+                                          onChange={({target}) => setComments(target.value)}/>
                         </Col>
                     </Row>
                 </Form.Group>
-                <Button className={"login-button"} variant={"outline-light"} onClick={saveForm} block>Guardar</Button>
+                <Button className="secondary-button-filled" onClick={saveForm} block>Guardar</Button>
             </Form>
         </div>
     );

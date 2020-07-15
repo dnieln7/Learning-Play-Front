@@ -1,7 +1,7 @@
 .post-card {
     margin: 0.5em;
-    background: var(--secondary);
-
     min-width: 15em;
     max-width: 18em;
+
+    cursor: pointer;
 }

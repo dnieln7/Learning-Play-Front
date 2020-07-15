@@ -1,4 +1,5 @@
 import "./test-view.css";
+import "../pages-styles.css";
 
 import React, {useEffect, useState} from "react";
 import Form from "react-bootstrap/Form";
@@ -41,13 +42,13 @@ export const TestView = () => {
             <Form>
                 <Form.Group>
                     <Row>
-                        <Col>
-                            <p className="form-title text-center">{form.title}</p>
-                            <p className="form-subtitle text-center">{form.lesson}</p>
+                        <Col className="text-center text-light">
+                            <p className="font-title">{form.title}</p>
+                            <p className="font-subtitle">{form.lesson}</p>
                         </Col>
                     </Row>
                 </Form.Group>
-                <div className={"text-left"}>
+                <div className="text-left text-light">
                     {
                         form.questions.map((question, index) => {
                             switch (question.type) {

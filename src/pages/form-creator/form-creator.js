@@ -1,4 +1,5 @@
-import "./form-creator.css"
+import "./form-creator.css";
+import "../pages-styles.css";
 
 import React, {useState} from "react";
 import Form from "react-bootstrap/Form";
@@ -46,11 +47,11 @@ export const FormCreator = () => {
                     <Form.Group>
                         <Row>
                             <Col>
-                                <FormControl placeholder={title} className="form-title text-center"
+                                <FormControl placeholder={title} className="container-dark border-0 text-center font-title"
                                              onChange={({target}) => setTitle(target.value)}/>
                             </Col>
                             <Col>
-                                <FormControl placeholder={lesson} className="form-title text-center"
+                                <FormControl placeholder={lesson} className="container-dark border-0 text-center font-title"
                                              onChange={({target}) => setLesson(target.value)}/>
                             </Col>
                         </Row>
@@ -69,25 +70,25 @@ export const FormCreator = () => {
                             })
                         }
                     </div>
-                    <Button className={"login-button"} disabled={questions.length === 0} variant={"outline-light"}
-                            onClick={saveForm} block>Guardar</Button>
+                    <Button className="secondary-button-filled" disabled={questions.length === 0} onClick={saveForm}
+                            block>Guardar</Button>
                 </Form>
             </div>
 
-            <div className={"panel-container p-3 text-center"}>
-                <p className={"panel-title"}>Agrega una pregunta</p>
-                <Card className={"my-2 border-0 question-card"}>
+            <div className="panel-container p-4 rounded text-center">
+                <p className="font-title">Agrega una pregunta</p>
+                <Card className={"my-2 border-0 container-dark"}>
                     <Card.Body>
-                        <Card.Title>Abierta</Card.Title>
+                        <Card.Title className="font-subtitle">Abierta</Card.Title>
                         <Card.Subtitle>Pregunta y respuesta simple</Card.Subtitle>
-                        <Button className={"card-button"} onClick={() => setModalOpenQuestion(true)}>Agregar</Button>
+                        <Button className="primary-button-text" onClick={() => setModalOpenQuestion(true)}>Agregar</Button>
                     </Card.Body>
                 </Card>
-                <Card className={"my-2 border-0 question-card"}>
+                <Card className={"my-2 border-0 container-dark"}>
                     <Card.Body>
-                        <Card.Title>Opciones</Card.Title>
+                        <Card.Title className="font-subtitle">Opciones</Card.Title>
                         <Card.Subtitle>Pregunta con N posibles respuestas</Card.Subtitle>
-                        <Button className={"card-button"} onClick={() => setModalOptionQuestion(true)}>Agregar</Button>
+                        <Button className="primary-button-text" onClick={() => setModalOptionQuestion(true)}>Agregar</Button>
                     </Card.Body>
                 </Card>
             </div>

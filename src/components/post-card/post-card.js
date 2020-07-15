@@ -1,8 +1,9 @@
 import "./post-card.css"
+import "../../pages/pages-styles.css"
+
 import React from "react";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
 
 export class PostCard extends React.Component {
     render() {
@@ -12,11 +13,10 @@ export class PostCard extends React.Component {
         } = this.props.content;
 
         return (
-            <Card className="post-card" as={Col} sm={"4"}>
+            <Card className="container-light post-card" as={Col} sm={"4"} onClick={goPostDetail}>
                 <Card.Img variant="top" src={"https://img.icons8.com/fluent/200/000000/book.png"}/>
-                <Card.Body>
+                <Card.Body as={Col}>
                     <Card.Title>{title}</Card.Title>
-                    <Button variant="outline-light" onClick={goPostDetail}>Consultar</Button>
                 </Card.Body>
             </Card>
         );

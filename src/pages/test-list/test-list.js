@@ -1,4 +1,5 @@
 import "./test-list.css";
+import "../pages-styles.css";
 
 import React, {useEffect, useState} from 'react';
 import ListGroup from "react-bootstrap/ListGroup";
@@ -17,8 +18,8 @@ export const TestList = () => {
 
     return (
         <div className="p-4">
-            <div className="mb-4">
-                <h1 className="text-light text-center">Evaluaciones Creadas</h1>
+            <div className="mb-4 text-light text-center">
+                <h1 className="font-title">Evaluaciones Creadas</h1>
             </div>
             <ListGroup>
                 {

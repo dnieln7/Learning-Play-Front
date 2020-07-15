@@ -2,27 +2,19 @@
     background: var(--primary);
 }
 
-.navbar-brand {
-    color: var(--dark) !important;
-}
-
-.navbar-brand-logo {
+.brand-logo {
     height: 2.5rem;
-}
-
-.navbar-brand:hover {
-    color: var(--secondary) !important;
 }
 
 .navbar-toggler {
     border: 0;
 }
 
-.navbar-toggler-icon {
-
-}
-
 .nav-link {
+    font-family: 'Sulphur Point', sans-serif;
+    font-weight: bold;
+    font-size: 1.25em;
+
     color: var(--dark) !important;
 }
 

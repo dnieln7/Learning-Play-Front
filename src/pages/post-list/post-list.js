@@ -1,4 +1,5 @@
-import "./post-list.css"
+import "./post-list.css";
+import "../pages-styles.css";
 
 import React, {useEffect, useState} from "react";
 import {useHistory} from "react-router-dom";
@@ -17,17 +18,17 @@ export const PostList = () => {
 
     return (
         <div className="p-4">
-            <div className="mb-4">
-                <h1 className="text-light text-center">Contenidos publicados</h1>
+            <div className="mb-4 text-light text-center">
+                <h1 className="font-title">Contenidos publicados</h1>
             </div>
-            <Row className="text-center justify-content-center text-light" sm={"12"}>
+            <div className="row-justify-center">
                 {
                     posts.map((post, index) => <PostCard key={index} content={{
                         title: post.title,
                         goPostDetail: () => history.push("/posts/view/" + post.id)
                     }}/>)
                 }
-            </Row>
+            </div>
         </div>
     );
 };
