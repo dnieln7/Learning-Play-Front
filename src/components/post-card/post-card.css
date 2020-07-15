@@ -5,3 +5,14 @@
 
     cursor: pointer;
 }
+
+@media (max-width: 800px) {
+    .post-card {
+        min-width: 10em;
+        max-width: 15em;
+    }
+
+    .font {
+        font-size: 1em;
+    }
+}

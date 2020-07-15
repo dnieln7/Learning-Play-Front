@@ -17,6 +17,20 @@
     justify-content: center;
 }
 
+.make-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.make-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
 .container-primary {
     background: var(--primary);
     color: var(--dark);

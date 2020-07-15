@@ -13,10 +13,10 @@ export class PostCard extends React.Component {
         } = this.props.content;
 
         return (
-            <Card className="container-light post-card" as={Col} sm={"4"} onClick={goPostDetail}>
+            <Card className="container-light post-card" onClick={goPostDetail}>
                 <Card.Img variant="top" src={"https://img.icons8.com/fluent/200/000000/book.png"}/>
                 <Card.Body as={Col}>
-                    <Card.Title>{title}</Card.Title>
+                    <Card.Title className="font">{title}</Card.Title>
                 </Card.Body>
             </Card>
         );
