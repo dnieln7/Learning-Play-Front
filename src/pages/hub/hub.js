@@ -1,9 +1,13 @@
-import "./hub.css"
-import "../pages-styles.css"
+import "./hub.css";
+import "../pages-styles.css";
 
-import test_new from "../../assets/images/test_new.png"
-import test_update from "../../assets/images/test_update.png"
-import test_completed from "../../assets/images/test_completed.png"
+import test_create from "../../assets/images/test_create.png";
+import test_published from "../../assets/images/test_published.png";
+import test_answered from "../../assets/images/test_answered.png";
+
+import post_published from "../../assets/images/post_published.png";
+import post_create from "../../assets/images/post_create.png";
+import test_available from "../../assets/images/test_available.png";
 
 import React from "react";
 import HubCard from "../../components/hub-card/hub-card";
@@ -37,14 +41,14 @@ export const Hub = () => {
                             <div className="make-row">
                                 <HubCard content={
                                     {
-                                        img: test_completed,
+                                        img: test_available,
                                         title: "Evaluaciones",
                                         subtitle: "Vizualiza las evaluaciones publicadas",
                                         path: () => history.push("/test/available")
                                     }}/>
                                 <HubCard content={
                                     {
-                                        img: test_completed,
+                                        img: test_answered,
                                         title: "Mis evaluaciones",
                                         subtitle: "Revisa tus resultados",
                                         path: () => history.push("/test/graded")
@@ -53,7 +57,7 @@ export const Hub = () => {
                             <div className="make-row">
                                 <HubCard content={
                                     {
-                                        img: "https://img.icons8.com/fluent/200/000000/book.png",
+                                        img: post_published,
                                         title: "Publicaciones",
                                         subtitle: "Consulta los contenidos públicados",
                                         path: () => history.push("/post/published")
@@ -65,14 +69,14 @@ export const Hub = () => {
                             <div className="make-row">
                                 <HubCard content={
                                     {
-                                        img: test_new,
+                                        img: test_create,
                                         title: "Nueva evaluación",
                                         subtitle: "Crea una nueva evaluación",
                                         path: () => history.push("/test/creator")
                                     }}/>
                                 <HubCard content={
                                     {
-                                        img: test_update,
+                                        img: test_published,
                                         title: "Evaluaciones",
                                         subtitle: "Vizualiza las evaluaciones creadas",
                                         path: () => history.push("/test/published")
@@ -81,14 +85,14 @@ export const Hub = () => {
                             <div className="make-row">
                                 <HubCard content={
                                     {
-                                        img: test_completed,
+                                        img: test_answered,
                                         title: "Evaluaciones contestadas",
                                         subtitle: "Califica a tus estudiantes",
                                         path: () => history.push("/test/answered")
                                     }}/>
                                 <HubCard content={
                                     {
-                                        img: "https://img.icons8.com/fluent/200/000000/book.png",
+                                        img: post_create,
                                         title: "Nuevo contenido",
                                         subtitle: "Publica un nuevo contenido",
                                         path: () => history.push("/post/creator")
@@ -97,7 +101,7 @@ export const Hub = () => {
                             <div className="make-row">
                                 <HubCard content={
                                     {
-                                        img: "https://img.icons8.com/fluent/200/000000/book.png",
+                                        img: post_published,
                                         title: "Publicaciones",
                                         subtitle: "Consulta los contenidos públicados",
                                         path: () => history.push("/post/published")

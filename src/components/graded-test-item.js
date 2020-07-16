@@ -1,7 +1,8 @@
 import "../pages/pages-styles.css";
 
-import test_completed from "../assets/images/test_completed.png";
-import test_failed from "../assets/images/test_new.png";
+import test from "../assets/images/test.png";
+import graded_test_success from "../assets/images/graded_test_success.png";
+import graded_test_fail from "../assets/images/graded_test_fail.png";
 
 import React from "react";
 import Row from "react-bootstrap/Row";
@@ -21,7 +22,7 @@ export class GradedTestItem extends React.Component {
         return (
             <ListGroup.Item active className="bg-light my-1 border-0 rounded">
                 <Row className="text-dark">
-                    <Card.Img src={grade <= 5 ? test_failed : test_completed} className="w-auto"
+                    <Card.Img src={grade === 0 ? test : grade <= 5 ? graded_test_fail : graded_test_success} className="w-auto"
                               style={{height: "5rem"}}/>
                     <Col>
                         <p className="font-subtitle">{title}</p>

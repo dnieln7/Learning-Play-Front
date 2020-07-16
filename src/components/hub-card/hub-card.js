@@ -15,7 +15,7 @@ export default class HubCard extends React.Component {
 
         return (
             <Card className="cursor-pointer container-light card-container" onClick={path}>
-                <Card.Img src={img}/>
+                <Card.Img className="p-3" src={img}/>
                 <Card.Body>
                     <Card.Title className="text-center font-title card-font-title">{title}</Card.Title>
                     <Card.Subtitle className="text-center font-subtitle card-font-subtitle">{subtitle}</Card.Subtitle>
