@@ -18,7 +18,7 @@ export const PublishedPostView = () => {
     }, [post.id]);
 
     return (
-        <div className="column-justify-align-center mt-5">
+        <div className="make-column justify-content-center align-items-center mt-5">
             <div className="w-75 mb-2 text-light text-center">
                 <h1 className="font-title">{post.title}</h1>
                 <h5 className="font-subtitle text-left">Publicado por: {post.teacher.name}</h5>

@@ -35,7 +35,7 @@ export const PostCreator = () => {
     }
 
     return (
-        <div className="column-justify-align-center mt-5">
+        <div className="make-column justify-content-center align-items-center mt-5">
             {
                 showError
                     ?

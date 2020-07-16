@@ -19,13 +19,17 @@ export const PublishedPostList = () => {
             <div className="mb-4 text-light text-center">
                 <h1 className="font-title">Contenidos publicados</h1>
             </div>
-            <div className="row-justify-center">
-                {
-                    posts.map((post, index) => <PostCard key={index} content={{
-                        title: post.title,
-                        goPostDetail: () => history.push("/post/published/" + post.id)
-                    }}/>)
-                }
+            <div className="make-column align-items-center">
+                <div className="post-container">
+                    {
+                        posts.map((post, index) =>
+                            <PostCard key={index}
+                                      content={{
+                                          title: post.title,
+                                          goPostDetail: () => history.push("/post/published/" + post.id)
+                                      }}/>)
+                    }
+                </div>
             </div>
         </div>
     );

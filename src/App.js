@@ -5,7 +5,7 @@ import NavBar from "./components/navbar/nav-bar";
 import {Home} from "./pages/home/home";
 import {Login} from "./pages/auth-pages/login";
 import {SignUp} from "./pages/auth-pages/sign-up";
-import {Hub} from "./pages/hub";
+import {Hub} from "./pages/hub/hub";
 import {TestCreator} from "./pages/teacher-pages/test-creator/test-creator";
 import {PublishedTestList} from "./pages/teacher-pages/published-test-list";
 import {PublishedTestView} from "./pages/teacher-pages/published-test-view";

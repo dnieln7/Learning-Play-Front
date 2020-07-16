@@ -35,7 +35,7 @@ export const Login = () => {
     }
 
     return (
-        <div className="column-justify-align-center">
+        <div className="make-column justify-content-center align-items-center">
             <Image className="login-icon"
                    src={"https://img.icons8.com/material-rounded/100/000000/user-location.png"}/>
             <Form className="container-primary rounded text-center p-4">

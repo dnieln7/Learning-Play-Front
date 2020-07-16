@@ -46,7 +46,7 @@ export const SignUp = () => {
     };
 
     return (
-        <div className="column-justify-align-center pt-5">
+        <div className="make-column justify-content-center align-items-center pt-5">
             {
                 show
                     ?

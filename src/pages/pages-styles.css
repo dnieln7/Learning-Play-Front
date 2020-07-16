@@ -4,19 +4,6 @@
     width: 100%;
 }
 
-.column-justify-align-center {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.row-justify-center {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
 .make-column {
     display: flex;
     flex-direction: column;
