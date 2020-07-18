@@ -7,7 +7,7 @@ import Col from "react-bootstrap/Col";
 import {useHistory, useLocation} from 'react-router-dom'
 import {drawOpenQuestionGradable, drawOptionsQuestionGradable} from "../teacher-pages/test-creator/question-drawer";
 import Button from "react-bootstrap/Button";
-import {getFormById, putForm} from "../../services/FromsStudentDataService";
+import {getTestById, putTest} from "../../services/FromsStudentDataService";
 
 export const AnsweredTestView = () => {
     const location = useLocation();
@@ -19,7 +19,7 @@ export const AnsweredTestView = () => {
     const [comments, setComments] = useState("");
 
     useEffect(() => {
-        getFormById(path[path.length - 1]).then(response => {
+        getTestById(path[path.length - 1]).then(response => {
             let f = response.data;
 
             f.content = JSON.parse(f.content);
@@ -42,7 +42,7 @@ export const AnsweredTestView = () => {
                 content: JSON.stringify(form.content)
             };
 
-            putForm(studentForm.id, studentForm)
+            putTest(studentForm.id, studentForm)
                 .then(response => {
                     if (response.data.id !== undefined) {
                         history.replace("/test/answered");

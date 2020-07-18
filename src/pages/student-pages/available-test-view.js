@@ -8,7 +8,7 @@ import {useHistory, useLocation} from 'react-router-dom'
 import {getFormById} from "../../services/FromsTeacherDataService";
 import {drawOpenQuestionEditable, drawOptionsQuestionEditable} from "../teacher-pages/test-creator/question-drawer";
 import Button from "react-bootstrap/Button";
-import {postForm} from "../../services/FromsStudentDataService";
+import {postTest} from "../../services/FromsStudentDataService";
 
 export const AvailableTestView = () => {
     const location = useLocation();
@@ -42,7 +42,7 @@ export const AvailableTestView = () => {
             content: JSON.stringify(form.questions)
         };
 
-        postForm(studentForm)
+        postTest(studentForm)
             .then(response => {
                 if (response.data.id !== undefined) {
                     history.replace("/test/available");

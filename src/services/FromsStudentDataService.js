@@ -8,22 +8,22 @@ const HEADERS = {
     "Accept": "application/json"
 };
 
-export function getForms() {
+export function getTest() {
     return axios.get(URL, {headers: HEADERS});
 }
 
-export function getFormById(id) {
+export function getTestById(id) {
     return axios.get(URL + "/" + id, {headers: HEADERS});
 }
 
-export function postForm(form) {
+export function postTest(form) {
     return axios.post(URL, form, {headers: HEADERS});
 }
 
-export function putForm(id, form) {
+export function putTest(id, form) {
     return axios.put(URL + "/" + id, form, {headers: HEADERS});
 }
 
-export function deleteForm(id) {
+export function deleteTest(id) {
     return axios.delete(URL + "/" + id, {headers: HEADERS});
 }

@@ -3,6 +3,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 import {getForms} from "../../services/FromsTeacherDataService";
 import {useHistory} from "react-router-dom";
 import {AvailableTestItem} from "../../components/available-test-item";
+import {getTest} from "../../services/FromsStudentDataService";
 
 export const AvailableTestList = () => {
     const [forms, setForms] = useState([]);
@@ -10,7 +11,13 @@ export const AvailableTestList = () => {
     const history = useHistory();
 
     useEffect(() => {
-        getForms().then(response => setForms(response.data));
+        getForms().then(responseForms => {
+            getTest().then(responseTest => {
+                let testTitles = [];
+                responseTest.data.forEach(test => testTitles.push(test.title));
+                setForms(responseForms.data.filter(form => !testTitles.includes(form.title)));
+            });
+        });
     }, [forms.length]);
 
     return (

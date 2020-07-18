@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import ListGroup from "react-bootstrap/ListGroup";
 import {useHistory} from "react-router-dom";
-import {getForms} from "../../services/FromsStudentDataService";
+import {getTest} from "../../services/FromsStudentDataService";
 import {GradedTestItem} from "../../components/graded-test-item";
 
 export const GradedTestList = () => {
@@ -10,7 +10,7 @@ export const GradedTestList = () => {
     const history = useHistory();
 
     useEffect(() => {
-        getForms().then(response => setForms(response.data));
+        getTest().then(response => setForms(response.data));
     }, [forms.length]);
 
     return (
