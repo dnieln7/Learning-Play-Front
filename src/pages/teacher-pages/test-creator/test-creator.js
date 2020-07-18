@@ -11,12 +11,14 @@ import FormControl from "react-bootstrap/FormControl";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import {postForm} from "../../../services/FromsTeacherDataService";
+import {useHistory} from "react-router-dom";
 
 export const TestCreator = () => {
     const [questions, setQuestions] = useState([]);
     const [modalOpenQuestion, setModalOpenQuestion] = useState(false);
     const [modalOptionQuestion, setModalOptionQuestion] = useState(false);
     const user = JSON.parse(localStorage.getItem("user"));
+    const history = useHistory();
 
     const [title, setTitle] = useState("Formulario de " + user.name);
     const [lesson, setLesson] = useState("Lección de " + user.name);
@@ -36,7 +38,11 @@ export const TestCreator = () => {
 
     function saveForm() {
         postForm(formTeacher)
-            .then(response => console.log(response.data))
+            .then(response => {
+                if (response.data.id !== undefined) {
+                    history.replace("/hub");
+                }
+            })
             .catch(error => console.log(error));
     }
 

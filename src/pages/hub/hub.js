@@ -11,7 +11,8 @@ import test_available from "../../assets/images/test_available.png";
 
 import React from "react";
 import HubCard from "../../components/hub-card/hub-card";
-import {Link, useHistory} from "react-router-dom";
+import {useHistory} from "react-router-dom";
+import {ErrorComponent} from "../ErrorComponent";
 
 export const Hub = () => {
     const history = useHistory();
@@ -21,8 +22,7 @@ export const Hub = () => {
     if (user === null) {
         return (
             <div>
-                <p className="text-center text-danger title" style={{"font-size": "2rem"}}>Debes iniciar sesión</p>
-                <p className="title text-center text-danger"><Link to={"/login"}>Ir a Login</Link></p>
+                <ErrorComponent message={"Debes iniciar sessión para ver este contenido"} returnFunc={() => history.push("/login")}/>
             </div>
         );
     } else {

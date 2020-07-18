@@ -4,7 +4,7 @@ import React, {useEffect, useState} from "react";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import {useLocation} from 'react-router-dom'
+import {useHistory, useLocation} from 'react-router-dom'
 import {getFormById} from "../../services/FromsTeacherDataService";
 import {drawOpenQuestionEditable, drawOptionsQuestionEditable} from "../teacher-pages/test-creator/question-drawer";
 import Button from "react-bootstrap/Button";
@@ -12,6 +12,7 @@ import {postForm} from "../../services/FromsStudentDataService";
 
 export const AvailableTestView = () => {
     const location = useLocation();
+    const history = useHistory();
     const path = location.pathname.split("/");
     const user = JSON.parse(localStorage.getItem("user"));
 
@@ -42,7 +43,11 @@ export const AvailableTestView = () => {
         };
 
         postForm(studentForm)
-            .then(response => console.log(response.data))
+            .then(response => {
+                if (response.data.id !== undefined) {
+                    history.replace("/test/available");
+                }
+            })
             .catch(error => console.log(error));
     }
 
@@ -71,7 +76,7 @@ export const AvailableTestView = () => {
                         })
                     }
                 </div>
-                <Button className={"login-button"} variant={"outline-light"} onClick={saveForm} block>Guardar</Button>
+                <Button className="secondary-button-filled" type={"button"} onClick={saveForm} block>Guardar</Button>
             </Form>
         </div>
     );

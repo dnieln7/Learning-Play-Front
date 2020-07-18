@@ -22,16 +22,18 @@ export const Login = () => {
             role: role === "Maestro" ? "TEACHER" : "STUDENT"
         };
 
-        login(auth).then(response => {
-            localStorage.setItem("user", JSON.stringify(response.data.result));
-            if (localStorage.getItem("user").length > 1) {
-                window.location.reload();
-            }
-        }).catch(error => alert(error));
+        login(auth)
+            .then(response => {
+                if (response.data.code === 1) {
+                    localStorage.setItem("user", JSON.stringify(response.data.result));
+                    history.replace("/hub");
+                    window.location.reload()
+                }
+            }).catch(error => alert(error));
     }
 
     if (localStorage.getItem("user") !== null) {
-        history.push("/hub");
+        history.replace("/hub");
     }
 
     return (
@@ -62,7 +64,8 @@ export const Login = () => {
                     </Form.Control>
                 </Form.Group>
 
-                <Button className="secondary-button-filled" type="button" onClick={handleLogin} block>Iniciar sesión</Button>
+                <Button className="secondary-button-filled" type="button" onClick={handleLogin} block>Iniciar
+                    sesión</Button>
                 <Button className="secondary-button-filled" type="button" href={"/sign-up"} block>Registrarme</Button>
                 {/*<Button className="secondary-button-text" type="button" block>Olvidé mi contraseña</Button>*/}
             </Form>

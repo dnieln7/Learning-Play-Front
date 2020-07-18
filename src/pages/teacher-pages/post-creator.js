@@ -5,10 +5,12 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import {postPost} from "../../services/PostDataService";
 import Alert from "react-bootstrap/Alert";
+import {useHistory} from "react-router-dom";
 
 export const PostCreator = () => {
 
     const user = JSON.parse(localStorage.getItem("user"));
+    const history = useHistory();
 
     const [showError, setShowError] = useState(false);
     const [title, setTitle] = useState("Publicación de " + user.name);
@@ -27,7 +29,11 @@ export const PostCreator = () => {
             };
 
             postPost(post)
-                .then(response => console.log(response.data))
+                .then(response => {
+                    if (response.data.id !== undefined) {
+                        history.replace("/hub");
+                    }
+                })
                 .catch(error => console.log(error));
         } else {
             setShowError(true);

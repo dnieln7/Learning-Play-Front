@@ -7,8 +7,11 @@ import InputGroup from "react-bootstrap/InputGroup";
 import Button from "react-bootstrap/Button";
 import Alert from "react-bootstrap/Alert";
 import {signUp} from "../../services/UserDataService";
+import {useHistory} from "react-router-dom";
 
 export const SignUp = () => {
+
+    const history = useHistory();
 
     const [validated, setValidated] = useState(false);
     const [terms, setTerms] = useState(false);
@@ -38,7 +41,9 @@ export const SignUp = () => {
             };
 
             signUp(user).then(response => {
-                console.log(response.data);
+                if(response.data.code === 1){
+                    history.push("/login")
+                }
             });
         }
 
@@ -56,7 +61,7 @@ export const SignUp = () => {
                     </Alert>
                     : <div/>
             }
-            <Form noValidate validated={validated} onSubmit={handleSignUp} className="container-primary rounded text-center p-4 m-4">
+            <Form noValidate validated={validated} className="container-primary rounded text-center p-4 m-4">
                 <Form.Label className="font-title mb-4">Crear mi cuenta</Form.Label>
                 <Form.Row>
                     <Form.Group as={Col}>
@@ -100,7 +105,7 @@ export const SignUp = () => {
                             </Form.Control.Feedback>
                         </InputGroup>
                     </Form.Group>
-                    <Form.Group as={Col} >
+                    <Form.Group as={Col}>
                         <Form.Control
                             required
                             type="password"
@@ -130,7 +135,7 @@ export const SignUp = () => {
                         /> Acepto los terminos y condiciones
                     </a>
                 </Form.Group>
-                <Button type="submit" className="secondary-button-filled">Crear cuenta</Button>
+                <Button type="button" onClick={handleSignUp} className="secondary-button-filled">Crear cuenta</Button>
             </Form>
         </div>
     );

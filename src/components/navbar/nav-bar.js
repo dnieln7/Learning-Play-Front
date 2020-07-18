@@ -1,6 +1,6 @@
 import "./nav-bar.css";
 
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import brand from "../../assets/images/brand.png";

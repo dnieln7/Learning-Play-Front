@@ -4,7 +4,7 @@ import React, {useEffect, useState} from "react";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import {useLocation} from 'react-router-dom'
+import {useHistory, useLocation} from 'react-router-dom'
 import {drawOpenQuestionGradable, drawOptionsQuestionGradable} from "../teacher-pages/test-creator/question-drawer";
 import Button from "react-bootstrap/Button";
 import {getFormById, putForm} from "../../services/FromsStudentDataService";
@@ -12,6 +12,7 @@ import {getFormById, putForm} from "../../services/FromsStudentDataService";
 export const AnsweredTestView = () => {
     const location = useLocation();
     const path = location.pathname.split("/");
+    const history = useHistory();
 
     const [form, setForm] = useState({student: {}, content: []});
     const [grade, setGrade] = useState(0.0);
@@ -42,7 +43,11 @@ export const AnsweredTestView = () => {
             };
 
             putForm(studentForm.id, studentForm)
-                .then(response => console.log(response.data))
+                .then(response => {
+                    if (response.data.id !== undefined) {
+                        history.replace("/test/answered");
+                    }
+                })
                 .catch(error => console.log(error));
         }
     }
@@ -75,11 +80,11 @@ export const AnsweredTestView = () => {
                 <Form.Group>
                     <Row>
                         <Col>
-                            <Form.Control type="number" placeholder={"Calificación"} value={form.grade}
+                            <Form.Control type="number" placeholder={form.grade !== 0 ? form.grade : "Calificación"}
                                           onChange={({target}) => setGrade(parseFloat(target.value))}/>
                         </Col>
                         <Col>
-                            <Form.Control as="textarea" rows="3" placeholder={"Comentarios"} value={form.comments}
+                            <Form.Control as="textarea" rows="3" placeholder={form.comments !== "" ? form.comments : "Comentarios"}
                                           onChange={({target}) => setComments(target.value)}/>
                         </Col>
                     </Row>
