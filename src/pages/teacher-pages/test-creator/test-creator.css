@@ -1,15 +1,1 @@
-/* Form */
 
-.form-container {
-    width: 75%;
-    color: var(--light);
-}
-
-/* Question Panel*/
-
-.panel-container {
-    position: absolute;
-    top: 5rem;
-    right: 1rem;
-    background: var(--primary);
-}

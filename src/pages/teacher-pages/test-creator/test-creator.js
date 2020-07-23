@@ -48,7 +48,7 @@ export const TestCreator = () => {
 
     return (
         <div className="p-4">
-            <div className={"form-container"}>
+            <div className="text-light">
                 <Form>
                     <Form.Group>
                         <Row>
@@ -83,21 +83,20 @@ export const TestCreator = () => {
                 </Form>
             </div>
 
-            <div className="panel-container p-4 rounded text-center">
-                <p className="font-title">Agrega una pregunta</p>
-                <Card className={"my-2 border-0 container-dark"}>
+            <div className="p-2 rounded text-center mt-5 panel-container">
+                <Card className={"my-2 border-0 container-light"}>
                     <Card.Body>
                         <Card.Title className="font-subtitle">Abierta</Card.Title>
                         <Card.Subtitle>Pregunta y respuesta simple</Card.Subtitle>
-                        <Button className="primary-button-text"
+                        <Button className="secondary-button-filled mt-3"
                                 onClick={() => setModalOpenQuestion(true)}>Agregar</Button>
                     </Card.Body>
                 </Card>
-                <Card className={"my-2 border-0 container-dark"}>
+                <Card className={"my-2 border-0 container-light"}>
                     <Card.Body>
                         <Card.Title className="font-subtitle">Opciones</Card.Title>
                         <Card.Subtitle>Pregunta con N posibles respuestas</Card.Subtitle>
-                        <Button className="primary-button-text"
+                        <Button className="secondary-button-filled mt-3"
                                 onClick={() => setModalOptionQuestion(true)}>Agregar</Button>
                     </Card.Body>
                 </Card>
