@@ -1,5 +1,7 @@
 import "../pages-styles.css"
 
+import termsPDF from "../../assets/docs/terminos.pdf"
+
 import React, {useState} from "react";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
@@ -14,13 +16,16 @@ export const SignUp = () => {
     const history = useHistory();
 
     const [validated, setValidated] = useState(false);
-    const [terms, setTerms] = useState(false);
-    const [show, setShow] = useState(false);
+    const [termsAlert, setTermsAlert] = useState(false);
+    const [authKeyAlert, setAuthKeyAlert] = useState(false);
+
     const [name, setName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [role, setRole] = useState("ESTUDIANTE");
+    const [role, setRole] = useState("Estudiante");
+    const [authKey, setAuthKey] = useState("");
+    const [terms, setTerms] = useState(false);
 
     const handleSignUp = (event) => {
         const form = event.currentTarget;
@@ -30,34 +35,47 @@ export const SignUp = () => {
         }
 
         if (!terms) {
-            setShow(true);
+            setTermsAlert(true);
         } else {
-            let user = {
-                name: name,
-                lastName: lastName,
-                email: email,
-                password: password,
-                role: role === "Maestro" ? "TEACHER" : "STUDENT"
-            };
+            if (role === "Maestro" && authKey !== "CE0YS4YD67lKCTeHfhvkuVHjy9Vb2c") {
+                setAuthKeyAlert(true);
+            } else {
+                let user = {
+                    name: name,
+                    lastName: lastName,
+                    email: email,
+                    password: password,
+                    role: role === "Maestro" ? "TEACHER" : "STUDENT"
+                };
 
-            signUp(user).then(response => {
-                if(response.data.code === 1){
-                    history.push("/login")
-                }
-            });
+                signUp(user).then(response => {
+                    if (response.data.code === 1) {
+                        history.push("/login")
+                    }
+                });
+            }
+
+            setValidated(true);
         }
-
-        setValidated(true);
     };
 
     return (
         <div className="make-column justify-content-center align-items-center pt-5">
             {
-                show
+                termsAlert
                     ?
-                    <Alert variant="danger" onClose={() => setShow(false)} dismissible>
+                    <Alert variant="danger" onClose={() => setTermsAlert(false)} dismissible>
                         <Alert.Heading>Error!</Alert.Heading>
                         <p>Debes aceptar los terminos y condiciones</p>
+                    </Alert>
+                    : <div/>
+            }
+            {
+                authKeyAlert
+                    ?
+                    <Alert variant="danger" onClose={() => setAuthKeyAlert(false)} dismissible>
+                        <Alert.Heading>Error!</Alert.Heading>
+                        <p>Debes proporcionar una clave de autorización válida (La clave de autorización se otorga en la dirección)</p>
                     </Alert>
                     : <div/>
             }
@@ -126,14 +144,31 @@ export const SignUp = () => {
                         </Form.Control>
                     </Form.Group>
                 </Form.Row>
+                {
+                    role === "Maestro"
+                        ? <Form.Row>
+                            <Form.Group as={Col}>
+                                <Form.Control
+                                    required={role === "Maestro"}
+                                    type="text"
+                                    placeholder="Clave de autorización"
+                                    onChange={({target}) => setAuthKey(target.value)}
+                                />
+                                <Form.Control.Feedback type="invalid">
+                                    Por favor ingresa una clave válida.
+                                </Form.Control.Feedback>
+                            </Form.Group>
+                        </Form.Row>
+                        : <div/>
+                }
                 <Form.Group as={Col}>
-                    <a className="secondary-button-text text-decoration-none" href={"https://www.google.com"}>
+                    <p className="secondary-button-text cursor-pointer" onClick={() => {window.open(termsPDF)}}>
                         <input
                             required
                             type="checkbox"
                             onChange={({target}) => setTerms(target.checked)}
                         /> Acepto los terminos y condiciones
-                    </a>
+                    </p>
                 </Form.Group>
                 <Button type="button" onClick={handleSignUp} className="secondary-button-filled">Crear cuenta</Button>
             </Form>
