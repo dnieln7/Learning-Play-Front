@@ -1,6 +1,8 @@
 import "./auth-pages-styles.css";
 import "../pages-styles.css"
 
+import profile from "../../assets/images/profile.png";
+
 import React, {useState} from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -37,9 +39,8 @@ export const Login = () => {
     }
 
     return (
-        <div className="make-column justify-content-center align-items-center">
-            <Image className="login-icon"
-                   src={"https://img.icons8.com/material-rounded/100/000000/user-location.png"}/>
+        <div className="make-column justify-content-center align-items-center p-4 back-img">
+            <Image className="login-icon" src={profile}/>
             <Form className="container-primary rounded text-center p-4">
                 <Form.Label className="font-title mb-4">Inicar sesión</Form.Label>
 

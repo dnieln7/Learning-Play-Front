@@ -2,7 +2,7 @@ import './App.css';
 
 import React from 'react';
 import NavBar from "./components/navbar/nav-bar";
-import {Home} from "./pages/home/home";
+import {Home} from "./pages/home";
 import {Login} from "./pages/auth-pages/login";
 import {SignUp} from "./pages/auth-pages/sign-up";
 import {Hub} from "./pages/hub/hub";

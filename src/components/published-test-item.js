@@ -1,6 +1,8 @@
 import "../pages/pages-styles.css";
 
 import test from "../assets/images/test.png";
+import delete_img from "../assets/images/delete.png";
+import detail from "../assets/images/detail.png";
 
 import React from "react";
 import Row from "react-bootstrap/Row";
@@ -27,11 +29,11 @@ export class PublishedTestItem extends React.Component {
                         <p className="font-subtitle">{title}</p>
                         <p className="mb-0">{lesson}</p>
                     </Col>
-                    <Image src={"https://img.icons8.com/material-rounded/100/000000/delete.png"}
+                    <Image src={delete_img}
                            className="img-fluid w-auto mr-3 align-self-center cursor-pointer" style={{height: "2.5rem"}}
                            onClick={deleteItem}/>
-                    <Image src={"https://img.icons8.com/metro/100/000000/view-file.png"}
-                           className="img-fluid w-auto align-self-center cursor-pointer" style={{height: "2.5rem"}}
+                    <Image src={detail}
+                           className="img-fluid w-auto align-self-center cursor-pointer mr-3" style={{height: "2.5rem"}}
                            onClick={viewItem}/>
                 </Row>
             </ListGroup.Item>

@@ -8,7 +8,7 @@ export function drawOpenQuestion(question, index) {
     return (
         <Form.Group key={index}>
             <Form.Label>{(index + 1) + ".- " + question.title}</Form.Label>
-            <Form.Control className="container-light" type="text" placeholder={"Respuesta"} disabled/>
+            <Form.Control className="container-light" type="text" value={question.answer} disabled/>
         </Form.Group>
     );
 }

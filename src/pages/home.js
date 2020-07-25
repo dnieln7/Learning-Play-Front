@@ -1,10 +1,10 @@
-import "./home.css";
+import "./pages-styles.css";
 
 import React from "react";
 
 export const Home = () => {
     return (
-        <div>
+        <div className="back-img">
 
         </div>
     );

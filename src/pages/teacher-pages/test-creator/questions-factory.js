@@ -20,6 +20,7 @@ function makeQuestion(type, title, answer, options) {
 
 export const OpenQuestionModal = (args) => {
     const [title, setTitle] = useState("");
+    const [answer, setAnswer] = useState("");
 
     return (
         <Modal show={args.show} onHide={args.onHide} size="lg" centered>
@@ -28,12 +29,14 @@ export const OpenQuestionModal = (args) => {
                     <Modal.Title className="font-title">Nueva pregunta abierta</Modal.Title>
                 </Modal.Header>
                 <Modal.Body className="border-0">
-                    <FormControl className="container-light rounded" placeholder={"Pregunta"}
+                    <FormControl className="container-light rounded mb-2" placeholder={"Pregunta"}
                                  onChange={({target}) => setTitle(target.value)}/>
+                    <FormControl className="container-light rounded" placeholder={"Respuesta"}
+                                 onChange={({target}) => setAnswer(target.value)}/>
                 </Modal.Body>
                 <Modal.Footer className="border-0">
                     <Button className="secondary-button-filled" onClick={() => {
-                        args.pushQuestion(makeQuestion("OPEN", title, "Answer 1", []));
+                        args.pushQuestion(makeQuestion("OPEN", title, answer, []));
                         args.onHide();
                     }}>Guardar</Button>
                     <Button className="secondary-button-text" onClick={args.onHide}>Cancelar</Button>

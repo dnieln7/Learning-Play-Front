@@ -1,7 +1,7 @@
-.extended-container-fixed {
-    position: fixed;
-    height: 100%;
-    width: 100%;
+.back-img {
+    height: 90vh;
+    background: url("../assets/images/background_1.jpg") no-repeat fixed;
+    background-size: 100% 100%;
 }
 
 .make-column {
