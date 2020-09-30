@@ -1,8 +1,8 @@
-#Learning Play Front
+# Learning Play Front
 
 _Front side for the Learning Play Project_
 
-##About
+# #About
 
 Learning Play is a platform to create and evaluate test focused on the primary children 
 
